@@ -2,7 +2,7 @@ import * as d3 from "d3";
 
 const PI2 = Math.PI * 2;
 const gravity = -9.81;
-const stepCount = 20;
+const stepCount = 30;
 
 export default function plotParabola([radius, radSec, angle]) {
   const circumference = PI2 * radius;

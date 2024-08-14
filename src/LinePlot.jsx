@@ -3,13 +3,13 @@ import { useRef, useEffect, useContext, useMemo } from "react";
 import { DataContext } from "./Provider";
 
 export default function LinePlot({
-  sizePx = 640,
+  sizePx = 512,
   marginTop = 40,
   marginRight = 40,
   marginBottom = 40,
   marginLeft = 40,
 }) {
-  const { sets } = useContext(DataContext);
+  const { sets, dispatch } = useContext(DataContext);
 
   const extentX = d3.extent(
     sets.reduce((prev, curr) => {
@@ -48,16 +48,21 @@ export default function LinePlot({
     return line(ySet);
   });
 
-  useEffect(() => void d3.select(gx.current).call(d3.axisBottom(x)), []);
-  useEffect(() => void d3.select(gy.current).call(d3.axisLeft(y)), []);
+  useEffect(() => void d3.select(gx.current).call(d3.axisBottom(x)));
+  useEffect(() => void d3.select(gy.current).call(d3.axisLeft(y)));
+
+  const svgRef = useRef();
+  useEffect(() => {});
 
   return (
-    <svg width={sizePx} height={sizePx}>
-      <g ref={gx} transform={`translate(0,${sizePx - marginBottom})`} />
-      <g ref={gy} transform={`translate(${marginLeft},0)`} />
-      {lines.map((line, i) => (
-        <path className="parabola" d={line} key={i} />
-      ))}
-    </svg>
+    <>
+      <svg width={sizePx} height={sizePx} ref={svgRef}>
+        <g ref={gx} transform={`translate(0,${sizePx - marginBottom})`} />
+        <g ref={gy} transform={`translate(${marginLeft},0)`} />
+        {lines.map((line, i) => (
+          <path className="parabola" d={line} key={i} />
+        ))}
+      </svg>
+    </>
   );
 }

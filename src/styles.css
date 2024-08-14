@@ -21,5 +21,16 @@ svg {
     fill: none;
     stroke: #3c93ff;
     stroke-width: 1.5;
+    opacity: 0.25;
   }
+  .parabola:last-child {
+    stroke: #007bff;
+    stroke-width: 2;
+    opacity: 1;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
 }
