@@ -1,10 +1,13 @@
 {
-  "name": "d3-react-useeffect",
+  "name": "parabolic-simulation",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.7",
     "d3": "7.8.4",
     "loader-utils": "3.2.1",
     "react": "18.2.0",
