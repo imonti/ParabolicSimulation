@@ -1,5 +1,25 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-color: #222222;
+}
+
+body {
+  background-color: #181c20;
+}
+
+svg {
+  line {
+    stroke: #535760;
+  }
+  text {
+    fill: #535760;
+  }
+  .domain {
+    stroke: #535760;
+  }
+  .parabola {
+    fill: none;
+    stroke: #3c93ff;
+    stroke-width: 1.5;
+  }
 }

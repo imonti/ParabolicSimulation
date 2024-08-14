@@ -6,7 +6,7 @@ export const DataContext = createContext(null);
 export function DataProvider({ children }) {
   const [sets, dispatch] = useReducer(dataReducer, [
     plotParabola([0.2, 20, 20]),
-    plotParabola([0.2, 20, 25]),
+    plotParabola([0.2, 20, 45]),
   ]);
 
   return (
